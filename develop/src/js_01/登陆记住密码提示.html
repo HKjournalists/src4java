@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style>
+	#div1 {width:100px;height:50px;background: yellow;border: 1px solid blue;display: none;}
+	#div2 {width:100px;height:50px;background: yellow;border: 1px solid blue;}
+</style>
+<script type="text/javascript">
+	;
+</script>
+</head>
+<body>
+		<input type="checkbox" onmousemove="document.getElementById('div1').style.display='block'" onmouseout="document.getElementById('div1').style.display='none'"/>自动登陆
+	<div id="div1">
+		不使用label标签，只能对checkbox产生作用
+	</div><br/>
+	<label onmouseover="document.getElementById('div2').style.display='block'" onmouseout="document.getElementById('div2').style.display='none'">
+		<input type="checkbox"/>记住密码
+		<div id="div2">
+			使用label标签，对label标签内所有有用
+		</div>
+	</label>
+</body>
+</html>
