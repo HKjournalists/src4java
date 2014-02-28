@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="example.hibernate.po">
+
+	<class name="User" table="t_user" lazy="true">
+		
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		<property name="username" 
+				type="string"
+				not-null="true"
+				length="15"
+				column="`t_username`"/>
+		
+		<property name="reTime" 
+				type="date"
+				column="t_reTime"/>
+		<property name="lastLog"
+				type="timestamp"
+				column="t_lastLog"/>
+	</class>
+	
+</hibernate-mapping>
