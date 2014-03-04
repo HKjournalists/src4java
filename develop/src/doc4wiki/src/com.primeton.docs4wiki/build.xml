@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<project default="main" basedir=".">
+	<property name="libroot" value="C:/temp"/>
+	<taskdef name="buildwikidocs" classname="com.primeton.doc4wiki.WikiDocsAntTask">
+		<classpath>
+			<pathelement location="${libroot}/lib/apache-mime4j-0.5.jar" />
+			<pathelement location="${libroot}/lib/commons-codec-1.3.jar" />
+			<pathelement location="${libroot}/lib/commons-httpclient-3.1.jar" />
+			<pathelement location="${libroot}/lib/commons-logging-1.1.1.jar" />
+			<pathelement location="${libroot}/lib/filterbuilder.jar" />
+			<pathelement location="${libroot}/lib/htmllexer.jar" />
+			<pathelement location="${libroot}/lib/htmlparser.jar" />
+			<pathelement location="${libroot}/lib/sax2.jar" />
+			<pathelement location="${libroot}/lib/thumbelina.jar" />
+			<pathelement location="${libroot}/lib/docs4wiki-bin.jar" />
+		</classpath>
+	</taskdef>
+	<target name="main">
+		<buildwikidocs>
+			<!-- wiki主机   -->
+			<property name="wikidocs_host" value="192.168.1.31"/>
+			
+			<!-- wiki端口  -->
+			<property name="wikidocs_port" value="8080"/>
+			
+			<!-- wiki路径 ,一般不需要修改   -->
+			<property name="wikidocs_path" value="/spaces/exportspacehtml.action"/>
+			
+			<!-- 需要导出的空间名称，一般不需要修改  BPS620EOSDOC BPS620JAVADOC     -->
+			<!-- 需要导出的空间名称，一般不需要修改  userdoc1 userdoc2     -->
+			<property name="wikidocs_workspace_id" value="BPS620JAVADOC"/>
+			
+			<!-- 登陆wiki的用户名   -->
+			<property name="wikidocs_user_name" value="liuxiang"/>
+			
+			<!-- 登录wiki的密码   -->
+			<property name="wikidocs_user_password" value="000000"/>
+			
+			<!-- 用于标示index.html中开始计算的标示位，请不要修改，除非你知道不会有问题   -->
+			<property name="wikidocs_root_index" value="Home.html"/>
+			
+			<!-- 导出文档的保存绝对路径   -->
+			<property name="wikidocs_resource_save_location" value="C:/userdocJava/userDoC.zip"/>
+		</buildwikidocs>
+	</target>
+</project>
